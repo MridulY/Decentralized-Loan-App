@@ -51,7 +51,7 @@ body {
     text-align: center;
   }
   
-  button:hover {
+  button:focus {
     background-color: green;
   }
   
