@@ -1,24 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>loan</title>
-    <base href="/" />
-    <link rel="icon" href="favicon.ico" />
-    <link type="text/css" rel="stylesheet" href="main.css" />
-  </head>
-  <body>
-    <main>
-      <img src="logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#">
-        <label for="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting"></section>
-    </main>
-  </body>
+<html>
+<head>
+  <title>Decentralised Loan App</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+  <h1>QuadB Technologies Collateral Loan App</h1>
+
+  <img src="bank_logo.png" alt="quadB logo" width="300" class="center-image"/>
+
+  <!-- Create Loan Form -->
+  <h2>Create a Loan</h2>
+  <div class="divider"></div>
+  <form id="createLoanForm">
+    <label for="borrower">Borrower:</label>
+    <input type="text" id="borrower" required><br>
+
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" required><br>
+
+    <label for ="interestRate">Interest Rate (%):</label>
+    <input type="number" id="interestRate" required><br>
+
+    <label for="collateral">Collateral:</label>
+    <input type="number" id="collateral" required><br>
+
+    <button type="submit">Create Loan</button>
+  </form>
+
+  <!-- Fund Loan Form -->
+  <h2>Fund a Loan</h2>
+  <div class="divider"></div>
+  <form id="fundLoanForm">
+    <label for="loanId">Loan ID:</label>
+    <input type="number" id="loanId" required><br>
+
+    <button type="submit">Fund Loan</button>
+  </form>
+
+  <!-- Output Area -->
+  <div id="output"></div>
+
+  <script src="index.js"></script>
+</body>
 </html>

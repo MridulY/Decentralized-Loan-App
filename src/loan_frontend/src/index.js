@@ -1,19 +1,38 @@
 import { loan_backend } from "../../declarations/loan_backend";
+import {Principal} from "@dfinity/principal";
+// Create an instance of the LoanPlatform actor
+//const loanPlatform = loan_backend.createActor();
 
-document.querySelector("form").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const button = e.target.querySelector("button");
+// Handle loan creation form submission
+document.getElementById("createLoanForm").addEventListener("submit", async function (event) {
+  event.preventDefault();
+  console.log("createLoanForm submitted");
+  const borrower = document.getElementById("borrower").value;
+  const amount = parseInt(document.getElementById("amount").value);
+  const interestRate = parseFloat(document.getElementById("interestRate").value);
+  const collateral = parseInt(document.getElementById("collateral").value);
 
-  const name = document.getElementById("name").value.toString();
+  try {
+    const response = await loan_backend.createLoan(Principal.fromText(borrower), amount, interestRate, collateral);
+    const loanid = response.id;
+    alert(`Loan created with ID: ${loanid}`);
+    console.log(response);
+  } catch (error) {
+    // Handle errors
+    console.error(error);
+  }
+});
 
-  button.setAttribute("disabled", true);
+// Handle loan funding form submission
+document.getElementById("fundLoanForm").addEventListener("submit", async function (event) {
+  event.preventDefault();
+  const loanId = parseInt(document.getElementById("loanId").value);
 
-  // Interact with foo actor, calling the greet method
-  const greeting = await loan_backend.greet(name);
-
-  button.removeAttribute("disabled");
-
-  document.getElementById("greeting").innerText = greeting;
-
-  return false;
+  try {
+    const response = await loan_backend.fundLoan(loanId);
+    alert(response);
+  } catch (error) {
+    // Handle errors
+    console.error("Invalid Loan Id");
+  }
 });
