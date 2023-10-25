@@ -35,3 +35,12 @@ git clone <repository-url>
 
 ![Alt Text](./src/loan_frontend/assets/Screenshot%20%28116%29.png)
 
+## Usage
+Run the application:
+bash
+Copy code
+npm start
+Open your web browser and access the application by navigating to the provided URL (usually http://localhost:8080).
+
+Use the application to create and fund loans.
+
