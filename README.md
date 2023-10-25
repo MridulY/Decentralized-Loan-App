@@ -1,4 +1,4 @@
-# My Awesome Project
+# Decentralized Loan App
 
 The Decentralized Loan App is a web-based application that allows users to create and fund loans using the Internet Computer blockchain. This README provides an overview of the project, how to set it up, and how to use it.
 
