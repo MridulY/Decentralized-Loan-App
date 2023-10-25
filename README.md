@@ -32,3 +32,6 @@ git clone https://github.com/MridulY/Decentralized-Loan-App
 1. Create loans with borrower information, loan amount, interest rate, and collateral.
 2. Fund existing loans by providing a loan ID.
 3. Secure and decentralized using Internet Computer blockchain technology.
+
+
+![Alt Text](./src/loan_frontend/assets/Screenshot%20%28116%29.png)
