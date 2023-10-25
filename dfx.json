@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "loan_backend": {
+      "main": "src/loan_backend/main.mo",
+      "type": "motoko"
+    },
+    "loan_frontend": {
+      "dependencies": [
+        "loan_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/loan_frontend/src/index.html"
+      },
+      "source": [
+        "src/loan_frontend/assets",
+        "dist/loan_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
