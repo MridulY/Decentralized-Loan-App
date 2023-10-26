@@ -6,6 +6,7 @@ import {Principal} from "@dfinity/principal";
 // Handle loan creation form submission
 document.getElementById("createLoanForm").addEventListener("submit", async function (event) {
   event.preventDefault();
+  event.stopImmediatePropagation();
   console.log("createLoanForm submitted");
   const borrower = document.getElementById("borrower").value;
   const amount = parseInt(document.getElementById("amount").value);
@@ -26,6 +27,7 @@ document.getElementById("createLoanForm").addEventListener("submit", async funct
 // Handle loan funding form submission
 document.getElementById("fundLoanForm").addEventListener("submit", async function (event) {
   event.preventDefault();
+  event.stopImmediatePropagation();
   const loanId = parseInt(document.getElementById("loanId").value);
 
   try {
